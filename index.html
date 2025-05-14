@@ -3,37 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BookHaven</title>
+  <title>BookHaven | Bookshelf</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" />
 </head>
 <body>
-  <header>
-    <h1>BookHaven</h1>
-    <nav>
+  <div class="app-container">
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="logo">BookHaven</div>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="library.html">Library</a></li>
-        <li><a href="upload.html">Upload</a></li>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="bookshelf.html" class="active">Bookshelf</a></li>
+        <li><a href="search.html">Search</a></li>
         <li><a href="admin.html">Admin</a></li>
         <li><a href="settings.html">Settings</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="about.html">About</a></li>
       </ul>
+      <div class="sidebar-footer">
+        <a href="login.html" class="logout">Logout</a>
+      </div>
     </nav>
-  </header>
 
-  <div class="main">
-    <h2>Welcome to BookHaven</h2>
-    <p>Explore, upload, and manage your books — all in one place. BookHaven is your digital library designed for ease, beauty, and power.</p>
-    
-    <div style="margin-top: 2rem;">
-      <a class="btn" href="library.html">Go to Library</a>
-      <a class="btn" href="upload.html" style="margin-left: 1rem;">Upload a Book</a>
-    </div>
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <h1>Your Bookshelf</h1>
+        <div class="user-info">
+          <span id="username">Reader</span>
+          <img src="assets/images/user-avatar.png" alt="User Avatar" />
+        </div>
+      </header>
 
-    <div style="margin-top: 3rem;">
-      <img src="assets/images/Screenshot_20250514-061346_Gallery.jpg" alt="Library Screenshot" style="max-width: 100%; border-radius: 8px; margin-bottom: 1rem;" />
-      <img src="assets/images/Screenshot_20250514-061346_Gallery (1).jpg" alt="Book Upload Screenshot" style="max-width: 100%; border-radius: 8px;" />
-    </div>
+      <section class="dashboard">
+        <div class="card">
+          <h2>Saved Books</h2>
+          <div class="books-grid">
+            <div class="book-card">
+              <img src="assets/images/book1.jpg" alt="Book Cover" />
+              <h3>Famous Five</h3>
+              <p>By Enid Blyton</p>
+            </div>
+            <div class="book-card">
+              <img src="assets/images/book2.jpg" alt="Book Cover" />
+              <h3>Island of Adventure</h3>
+              <p>By Enid Blyton</p>
+            </div>
+            <!-- More book cards will be added here -->
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
+
+  <script src="assets/js/script.js"></script>
 </body>
-        </html>
+                                 </html>
