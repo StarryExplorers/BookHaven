@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Read Book | BookHaven</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>BookHaven Reader</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="library.html">Library</a></li>
+        <li><a href="upload.html">Upload</a></li>
+        <li><a href="read.html" class="active">Read</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main">
+    <h2>Now Reading:</h2>
+    <div class="reader-container">
+      <embed id="book-viewer" src="data/sample.pdf" type="application/pdf" width="100%" height="600px" />
+    </div>
+    <div class="reader-controls">
+      <button onclick="goBack()">Back to Library</button>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.location.href = 'library.html';
+    }
+  </script>
+</body>
+              </html>
