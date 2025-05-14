@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookHaven | Home</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="logo">BookHaven</div>
+      <ul>
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="bookshelf.html">Bookshelf</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="login.html" class="logout">Logout</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <h1>Welcome to BookHaven</h1>
+        <div class="user-info">
+          <span id="username">Guest</span>
+          <img src="assets/images/user-avatar.png" alt="User Avatar" />
+        </div>
+      </header>
+
+      <section class="dashboard">
+        <div class="card highlight">
+          <h2>Explore New Books</h2>
+          <p>Dive into our latest additions from classic literature to rare gems!</p>
+          <a href="search.html" class="button">Search Books</a>
+        </div>
+
+        <div class="card">
+          <h2>Continue Reading</h2>
+          <ul class="reading-list">
+            <li>The Secret of Spiggy Holes <span class="progress">Pg 67</span></li>
+            <li>Jane Eyre <span class="progress">Pg 134</span></li>
+            <li>Oliver Twist <span class="progress">Pg 25</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Recently Added</h2>
+          <ul class="recent-books">
+            <li>Frankenstein</li>
+            <li>The Jungle Book</li>
+            <li>The Railway Children</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+  </html>
