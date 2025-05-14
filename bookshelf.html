@@ -83,6 +83,13 @@
 <body>
 
   <div class="sidebar">
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="bookshelf.html">Bookshelf</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#" onclick="handleLogout()" style="color: crimson; font-weight: bold;">Logout</a></li>
+  </ul>
+  </div>
     <h2>BookHaven</h2>
     <a href="index.html">Home</a>
     <a href="library.html">Library</a>
@@ -114,5 +121,11 @@
     </div>
   </div>
 <script src="assets/js/script.js"></script>
+  <script>
+  function handleLogout() {
+    google.accounts.id.disableAutoSelect();
+    window.location.href = "login.html"; // or wherever your login page is
+  }
+  </script>
 </body>
   </html>
