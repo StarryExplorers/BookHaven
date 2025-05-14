@@ -43,38 +43,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 220px;
-  background-color: #fff;
-  position: fixed;
-  top: 4.5rem;
-  left: 0;
-  bottom: 0;
-  border-right: 1px solid #ddd;
-  padding: 1rem;
-  overflow-y: auto;
-  transition: left 0.3s ease;
-  z-index: 9998;
-}
-
-.sidebar h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.sidebar a {
-  display: block;
-  padding: 0.5rem 0;
-  color: #333;
-  text-decoration: none;
-}
-
-.sidebar a:hover {
-  background-color: #eee;
-  padding-left: 0.5rem;
-}
-
 /* Main Content */
 .main {
   margin-left: 240px;
@@ -123,35 +91,12 @@ form label {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-  /* Sidebar Hidden */
-  .sidebar {
-    left: -250px; /* Sidebar hidden initially */
-  }
+@media (max-width: 768px)
 
   /* Main Content on Mobile */
   .main {
     margin-left: 0;
     padding: 1rem;
-  }
-
-  /* Make Sidebar visible when 'open' class is added */
-  .sidebar.open {
-    left: 0;
-  }
-
-  /* Menu Toggle Button */
-  .menu-toggle {
-    font-size: 26px;
-    padding: 10px 15px;
-    cursor: pointer;
-    background: #333;
-    color: white;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 10000; /* Make sure the button is always above the sidebar */
-    border-radius: 4px;
   }
 
   /* Adjust navigation list for smaller screens */
