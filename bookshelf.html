@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bookshelf | BookHaven</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9ff;
+      color: #333;
+    }
+
+    .sidebar {
+      width: 240px;
+      background: linear-gradient(to bottom, #4a148c, #6a1b9a);
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      position: fixed;
+    }
+
+    .sidebar h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 10px 0;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    .main-content {
+      margin-left: 260px;
+      padding: 30px;
+      flex-grow: 1;
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .book-card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .book-card:hover {
+      transform: scale(1.05);
+    }
+
+    .book-cover {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .book-title {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>BookHaven</h2>
+    <a href="index.html">Home</a>
+    <a href="library.html">Library</a>
+    <a href="upload.html">Upload</a>
+    <a href="read.html">Reader</a>
+    <a href="bookshelf.html" style="font-weight:bold;">Bookshelf</a>
+    <a href="admin.html">Admin</a>
+    <a href="settings.html">Settings</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Your Bookshelf</h1>
+    <div class="books-grid">
+      <div class="book-card">
+        <img src="assets/images/Screenshot_20250514-061346_Gallery.jpg" alt="Book 1" class="book-cover"/>
+        <div class="book-title">Adventures in Dreamland</div>
+      </div>
+      <div class="book-card">
+        <img src="assets/images/Screenshot_20250514-061346_Gallery (1).jpg" alt="Book 2" class="book-cover"/>
+        <div class="book-title">The Secret Chronicles</div>
+      </div>
+      <!-- Add more book cards here -->
+    </div>
+  </div>
+
+</body>
+  </html>
