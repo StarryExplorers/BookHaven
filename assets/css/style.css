@@ -1,1 +1,138 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
 
+/* Header */
+header {
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  padding: 1rem 2rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #fff;
+  position: fixed;
+  top: 4.5rem;
+  left: 0;
+  bottom: 0;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.sidebar h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+  display: block;
+  padding: 0.5rem 0;
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background-color: #eee;
+  padding-left: 0.5rem;
+}
+
+/* Main Content */
+.main {
+  margin-left: 240px;
+  padding: 2rem;
+}
+
+/* Buttons */
+button, .btn {
+  background: #4b6cb7;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+button:hover, .btn:hover {
+  background: #3a539b;
+}
+
+/* Forms */
+input, select, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+/* Login Box */
+.login-box {
+  max-width: 400px;
+  margin: 5rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  }
