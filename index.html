@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookHaven - Home</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/images/Screenshot_20250514-061346_Gallery.jpg" type="image/jpeg" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/images/Screenshot_20250514-061346_Gallery.jpg" alt="BookHaven Logo">
+      <h1>BookHaven</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="library.html">Library</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="upload.html">Upload</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+    </nav>
+    <div id="google-signin-button"></div>
+  </header>
 
+  <aside class="sidebar">
+    <div class="user-info">
+      <img src="assets/images/Screenshot_20250514-061346_Gallery (1).jpg" alt="User">
+      <p id="username">Guest</p>
+    </div>
+    <ul class="menu">
+      <li><a href="account.html">My Account</a></li>
+      <li><a href="favorites.html">Favorites</a></li>
+      <li><a href="recent.html">Recently Viewed</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="#" id="signout-btn">Sign Out</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <h2>Welcome to BookHaven</h2>
+      <p>Your ultimate destination for reading, uploading, and discovering amazing books online.</p>
+      <a href="library.html" class="cta">Explore Library</a>
+    </section>
+
+    <section class="features">
+      <h3>Features</h3>
+      <div class="feature-grid">
+        <div class="feature">
+          <h4>Search Books</h4>
+          <p>Find millions of books across genres and formats instantly.</p>
+        </div>
+        <div class="feature">
+          <h4>Upload & Share</h4>
+          <p>Upload your own eBooks or documents and share them with the world.</p>
+        </div>
+        <div class="feature">
+          <h4>Bookmark Favorites</h4>
+          <p>Save your favorite books to your personal library.</p>
+        </div>
+        <div class="feature">
+          <h4>Read Online</h4>
+          <p>Read directly in your browser with our sleek reader view.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BookHaven. All rights reserved.</p>
+  </footer>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+          </html>
