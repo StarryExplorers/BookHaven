@@ -6,7 +6,20 @@
   <title>Bookshelf | BookHaven</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    body {
+    <body> 
+    <!-- Toggle Sidebar Button -->
+<div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="bookshelf.html">Bookshelf</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="#" onclick="handleLogout()" style="color: crimson; font-weight: bold;">Logout</a></li>
+  </ul>
+</div>
+    {
       display: flex;
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
