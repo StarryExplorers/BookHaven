@@ -6,27 +6,16 @@
   <title>Bookshelf | BookHaven</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    <body> 
-    <!-- Toggle Sidebar Button -->
-<div class="menu-toggle" onclick="toggleSidebar()">☰</div>
-
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-  <ul>
-    <li><a href="home.html">Home</a></li>
-    <li><a href="bookshelf.html">Bookshelf</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="#" onclick="handleLogout()" style="color: crimson; font-weight: bold;">Logout</a></li>
-  </ul>
-</div>
-    {
-      display: flex;
+    /* Global Styles */
+    body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f9f9ff;
       color: #333;
+      display: flex;
     }
 
+    /* Sidebar */
     .sidebar {
       width: 240px;
       background: linear-gradient(to bottom, #4a148c, #6a1b9a);
@@ -91,35 +80,69 @@
       font-size: 1rem;
       font-weight: bold;
     }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px; /* Initially hidden */
+        width: 250px;
+        height: 100%;
+        background: linear-gradient(145deg, #1a1a2e, #16213e);
+        color: white;
+        padding-top: 60px;
+        transition: left 0.3s ease;
+        z-index: 9999;
+      }
+
+      .sidebar.open {
+        left: 0; /* Show sidebar */
+      }
+
+      .menu-toggle {
+        font-size: 26px;
+        padding: 10px 15px;
+        cursor: pointer;
+        background: #333;
+        color: white;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 9999;
+        border-radius: 4px;
+      }
+
+      .main-content {
+        margin-left: 0;
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <div class="sidebar">
-  <ul>
-    <li><a href="home.html">Home</a></li>
-    <li><a href="bookshelf.html">Bookshelf</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="#" onclick="handleLogout()" style="color: crimson; font-weight: bold;">Logout</a></li>
-  </ul>
-  </div>
-    <h2>BookHaven</h2>
-    <a href="index.html">Home</a>
-    <a href="library.html">Library</a>
-    <a href="upload.html">Upload</a>
-    <a href="read.html">Reader</a>
-    <a href="bookshelf.html" style="font-weight:bold;">Bookshelf</a>
-    <a href="admin.html">Admin</a>
-    <a href="settings.html">Settings</a>
+  <!-- Toggle Sidebar Button -->
+  <div class="menu-toggle" onclick="toggleSidebar()">☰</div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="bookshelf.html">Bookshelf</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#" onclick="handleLogout()" style="color: crimson; font-weight: bold;">Logout</a></li>
+    </ul>
   </div>
 
+  <!-- Main Content -->
   <div class="main-content">
     <h1>Your Bookshelf</h1>
     <select id="genreFilter">
-  <option value="All">All Genres</option>
-  <option value="Fantasy">Fantasy</option>
-  <option value="Mystery">Mystery</option>
-  <!-- Add more as needed -->
+      <option value="All">All Genres</option>
+      <option value="Fantasy">Fantasy</option>
+      <option value="Mystery">Mystery</option>
+      <!-- Add more genres as needed -->
     </select>
     <div class="books-grid">
       <div class="book-card">
@@ -133,17 +156,18 @@
       <!-- Add more book cards here -->
     </div>
   </div>
-<script src="assets/js/script.js"></script>
+
+  <!-- Scripts -->
+  <script src="assets/js/script.js"></script>
   <script>
-  function handleLogout() {
-    google.accounts.id.disableAutoSelect();
-    window.location.href = "login.html"; // or wherever your login page is
-  }
-  </script>
-  <script>
+    function handleLogout() {
+      google.accounts.id.disableAutoSelect();
+      window.location.href = "login.html"; // or wherever your login page is
+    }
+
     function toggleSidebar() {
-  document.getElementById("sidebar").classList.toggle("open");
-}
+      document.getElementById("sidebar").classList.toggle("open");
+    }
   </script>
 </body>
-  </html>
+</html>
