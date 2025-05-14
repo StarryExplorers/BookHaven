@@ -1,1 +1,12 @@
-
+[
+  {
+    "title": "Adventures in Dreamland",
+    "image": "assets/images/Screenshot_20250514-061346_Gallery.jpg",
+    "genre": "Fantasy"
+  },
+  {
+    "title": "The Secret Chronicles",
+    "image": "assets/images/Screenshot_20250514-061346_Gallery (1).jpg",
+    "genre": "Mystery"
+  }
+]
