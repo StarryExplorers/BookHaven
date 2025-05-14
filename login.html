@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookHaven | Login</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Login to BookHaven</h2>
+    <form id="login-form">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p>or</p>
+    <div id="google-signin-button"></div>
+    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+  </div>
 
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      const storedUser = JSON.parse(localStorage.getItem("bookhaven_registered_" + email));
+      if (storedUser && storedUser.password === password) {
+        loginUser({ email });
+      } else {
+        alert("Invalid credentials.");
+      }
+    });
+
+    // Google Sign-In
+    function handleCredentialResponse(response) {
+      const user = decodeJwtResponse(response.credential);
+      loginUser({ email: user.email, name: user.name });
+    }
+
+    function decodeJwtResponse(token) {
+      const base64 = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(atob(base64).split('').map(c => {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+      return JSON.parse(jsonPayload);
+    }
+
+    google.accounts.id.initialize({
+      client_id: "361831602073-jjr8g1u741gfihkp88rv2out8a37gka1.apps.googleusercontent.com",
+      callback: handleCredentialResponse
+    });
+
+    google.accounts.id.renderButton(
+      document.getElementById("google-signin-button"),
+      { theme: "outline", size: "large" }
+    );
+  </script>
+  <script src="assets/js/auth.js"></script>
+</body>
+  </html>
