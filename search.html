@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookHaven | Search</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+</head>
+<body>
+  <div class="app-container">
 
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="logo">BookHaven</div>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="bookshelf.html">Bookshelf</a></li>
+        <li><a href="search.html" class="active">Search</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="login.html" class="logout">Logout</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <h1>Search</h1>
+        <div class="user-info">
+          <span id="username">Reader</span>
+          <img src="assets/images/user-avatar.png" alt="User Avatar" />
+        </div>
+      </header>
+
+      <section class="dashboard">
+        <div class="card">
+          <h2>Find Your Next Read</h2>
+          <form class="search-form">
+            <input type="text" id="searchInput" placeholder="Search by title, author, or genre..." />
+            <button type="submit" class="btn-primary">Search</button>
+          </form>
+        </div>
+
+        <div class="results" id="searchResults">
+          <!-- Dynamic search results will appear here -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+  <script>
+    const form = document.querySelector('.search-form');
+    const resultsDiv = document.getElementById('searchResults');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const query = document.getElementById('searchInput').value.trim();
+
+      resultsDiv.innerHTML = "";
+
+      if (!query) {
+        resultsDiv.innerHTML = "<p>Please enter a search term.</p>";
+        return;
+      }
+
+      // Simulate results (later you'll connect to a real DB)
+      const sampleBooks = [
+        { title: "The Secret Island", author: "Enid Blyton" },
+        { title: "The Famous Five", author: "Enid Blyton" },
+        { title: "Mystery of the Disappearing Cat", author: "Enid Blyton" },
+      ];
+
+      const filtered = sampleBooks.filter(book =>
+        book.title.toLowerCase().includes(query.toLowerCase()) ||
+        book.author.toLowerCase().includes(query.toLowerCase())
+      );
+
+      if (filtered.length === 0) {
+        resultsDiv.innerHTML = "<p>No books found. Try another search.</p>";
+      } else {
+        filtered.forEach(book => {
+          const item = document.createElement('div');
+          item.className = 'book-result';
+          item.innerHTML = `<strong>${book.title}</strong> by ${book.author}`;
+          resultsDiv.appendChild(item);
+        });
+      }
+    });
+  </script>
+</body>
+        </html>
