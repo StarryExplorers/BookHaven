@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Book | BookHaven</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Upload to BookHaven</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="library.html">Library</a></li>
+        <li><a href="upload.html" class="active">Upload</a></li>
+        <li><a href="admin.html">Admin</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <div class="main">
+    <h2>Upload a New Book</h2>
+    <form id="uploadForm" class="upload-form">
+      <label for="title">Book Title:</label>
+      <input type="text" id="title" name="title" required />
+
+      <label for="author">Author:</label>
+      <input type="text" id="author" name="author" required />
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+
+      <label for="cover">Cover Image:</label>
+      <input type="file" id="cover" name="cover" accept="image/*" required />
+
+      <label for="file">Book File (PDF or EPUB):</label>
+      <input type="file" id="file" name="file" accept=".pdf,.epub" required />
+
+      <button type="submit" class="btn">Upload Book</button>
+    </form>
+  </div>
+
+  <script src="assets/js/upload.js"></script>
+</body>
+                                   </html>
